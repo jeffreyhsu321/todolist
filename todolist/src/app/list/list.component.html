@@ -1,0 +1,14 @@
+<p>Title</p>
+
+<ul>
+    <li *ngFor="let item of list" >
+        <div *ngIf='isChecked; else isNotChecked' class='isChecked'>
+            <input type='checkbox' (change)="onCheck()" checked >{{item}}
+        </div>
+        <ng-template #isNotChecked>
+            <input type='checkbox' (change)="onCheck()">{{item}}
+        </ng-template>
+    </li>
+</ul>
+
+<input type='text' #box (keyup.enter)="onEnter(box.value)">
